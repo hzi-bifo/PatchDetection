@@ -36,12 +36,12 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 ### 3) Running the Pipeline
 1. To run the PatchDetection pipeline, **open a command-line terminal and insert**:
 		
-		$sudo docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i [PREFIX] -d [DELTA] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
+		$sudo docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i [PREFIX] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
 		
 2. To **customize your pipeline-deployment**, you can append the following to the run-command:
 > 
 
-	-d, --d   : delta radius, mendatory
+	-d, --d   : delta radius
 	-c, --c   : name of the chain, default is chain A
 	-p, --p   : name of the pdb file, mandatory
 	-i, --i   : name of the input folder, mandatory
@@ -52,7 +52,7 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 
 Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in */home/johndoe/patchdetection/HA_test*, the radius is 7 angstrom and the pdb file is named 3hmg.pdb. You would then run
 
- 	$sudo docker run -v /home/johndoe/patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -d 7 -p 3hmg.pdb
+ 	$sudo docker run -v /home/johndoe/patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -p 3hmg.pdb
 
 4. **Stopping the Pipeline**
 
@@ -79,12 +79,12 @@ The software image runs on Docker. Docker is an open platform for developers and
 1. You need to **share the drive** that contains the *patchdetection*-folder in the Docker Settings (see [Shared Drives](https://docs.docker.com/docker-for-windows/#docker-settings "Docker Settings")). It's sufficient if you do this once the first time you use the pipeline.
 2. To run the PatchDetection pipeline, **open your PowerShell as admin and insert**:
 		
-		$docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i [PREFIX] -d [DELTA] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
+		$docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i [PREFIX] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
 		
 3. To **customize your pipeline-deployment**, you can append the following to the run-command:
 > 
 
-	-d, --d   : delta radius, mendatory
+	-d, --d   : delta radius
 	-c, --c   : name of the chain, default is chain A
 	-p, --p   : name of the pdb file, mandatory
 	-i, --i   : name of the input folder, mandatory
@@ -95,7 +95,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in */home/johndoe/patchdetection/HA_test*, the radius is 7 angstrom and the pdb file is named 3hmg.pdb. You would then run
 
-	$docker run -v C:\users\johndoe\Documents\patchdetection:\app\patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -d 7 -p 3hmg.pdb
+	$docker run -v C:\users\johndoe\Documents\patchdetection:\app\patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -p 3hmg.pdb
 
 5. **Stopping the Pipeline**
 
@@ -121,12 +121,12 @@ The software image runs on Docker. Docker is an open platform for developers and
 1. You need to **share the folder** that contains the *patchdetection*-folder in the Docker Settings (see [File Sharing](https://docs.docker.com/docker-for-mac/#file-sharing "Docker for Mac")). It's sufficient if you do this once the first time you use the pipeline.
 2. To run the PatchDetection pipeline, **open a command-line terminal and insert**:
 		
-		$sudo docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i [PREFIX] -d [DELTA] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
+		$sudo docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i [PREFIX] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
 		
 3. To **customize your pipeline-deployment**, you can append the following to the run-command:
 > 
 
-	-d, --d   : delta radius, mendatory
+	-d, --d   : delta radius
 	-c, --c   : name of the chain, default is chain A
 	-p, --p   : name of the pdb file, mandatory
 	-i, --i   : name of the input folder, mandatory
@@ -137,7 +137,7 @@ The software image runs on Docker. Docker is an open platform for developers and
 
 Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in */home/johndoe/patchdetection/HA_test*, the radius is 7 angstrom and the pdb file is named 3hmg.pdb. You would then run
 
- 	$docker run -v /Users/johndoe/Documents/patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -d 7 -p 3hmg.pdb
+ 	$docker run -v /Users/johndoe/Documents/patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -p 3hmg.pdb
 
 5. **Stopping the Pipeline**
 
