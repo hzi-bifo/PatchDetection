@@ -18,10 +18,6 @@ This readme describes the deployment and execution of a Docker image, which cont
 + Docker Advanced
 + Questions and Bug Reports
 
-
-
-
-
 - - -
 ## PatchDetection on Linux
 ### 1) Requirements
@@ -31,11 +27,11 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 1. **Install Docker**, if it is not already installed on your machine. Docker is available under [DockerStore (Community Edition)](https://store.docker.com/search?type=edition&offering=community "Docker Store") (the free community edition is sufficient). Please follow the instructions on the respective download page.
 
 ### 2) Input Data
-1. **Create a folder called *patchdetection*,** or, if you've run the pipeline before, you can re-use the old *patchdetection*-folder. It does not matter where this folder is located on your machine, but it must be named *patchdetection*. The docker container will mount this folder to access the data that is located in there. 
-2. **Copy a folder named *[PREFIX]* that contains the files to be analyzed into the *patchdetection* folder.** The files in the *[PREFIX]*-folder must be named *[PREFIX]_cds.fa* and *[PREFIX]_aa.fa, where *[PREFIX]* can be any character sequence. The prefix must be the same!
+1. **Create a folder  called *patchdetection*,** or, if you've run the pipeline before, you can re-use the old *patchdetection*-folder. It does not matter where this folder is located on your machine, but it must be named *patchdetection*. The docker container will mount this folder to access the data that is located in there. 
+2. **Copy a folder named *[PREFIX]* that contains the files to be analyzed into the *patchdetection* folder.** The files in the *[PREFIX]*-folder must be named *[PREFIX]_cds.fa* and *[PREFIX]_aa.fa, where *[PREFIX]* can be any character sequence. The prefix must be the same! This does not apply to the pdb file.
 > Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored by the pipeline.
 > Identifiers in the cds-file must match the identifiers for the respective aa-sequence in the aa-file.
-> For reference data, please refer to [this folder](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA "Testdata").
+> For reference data, please refer to [this folder](https://github.com/hzi-bifo/PatchDetection/tree/master/Software/Testdata/HA "Testdata").
 
 ### 3) Running the Pipeline
 1. To run the PatchDetection pipeline, **open a command-line terminal and insert**:
@@ -48,12 +44,12 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 	-p, --p   : provide name of pdb File (mandatory)
 	-d, --d   : provide delta (optional)
 	-c, --c   : provide chain (optional)
-	-s, --s   : starts subsampling
+	-s, --s   : starts subsampling (optional)
 	-h, --h   : help
 
 3. **Example**
 
-Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA "Testdata") is located in */home/johndoe/patchdetection/*, the radius is 7 angstrom (default), the pdb file is named protein.pdb and subsampling is on. You would then run
+Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/PatchDetection/tree/master/Software/Testdata/HA "Testdata") is located in */home/johndoe/patchdetection/*, the radius is 7 angstrom (default), the pdb file is named protein.pdb and subsampling is on. You would then run
 
 		$sudo docker run -v /home/johndoe/patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i HA -p protein.pdb -s
 
