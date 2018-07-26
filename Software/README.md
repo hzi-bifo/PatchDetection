@@ -18,6 +18,10 @@ This readme describes the deployment and execution of a Docker image, which cont
 + Docker Advanced
 + Questions and Bug Reports
 
+
+
+
+
 - - -
 ## PatchDetection on Linux
 ### 1) Requirements
@@ -31,34 +35,40 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 2. **Copy a folder named *[PREFIX]* that contains the files to be analyzed into the *patchdetection* folder.** The files in the *[PREFIX]*-folder must be named *[PREFIX]_cds.fa* and *[PREFIX]_aa.fa, where *[PREFIX]* can be any character sequence. The prefix must be the same!
 > Please note that sequences without a full date (formatted as either yyyy-mm-dd or yyyy/mm/dd) will be ignored by the pipeline.
 > Identifiers in the cds-file must match the identifiers for the respective aa-sequence in the aa-file.
-> For a reference file of how *[PREFIX]_cds.fa* should look like, please refer to [this folder](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa").
+> For reference data, please refer to [this folder](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA "Testdata").
 
 ### 3) Running the Pipeline
 1. To run the PatchDetection pipeline, **open a command-line terminal and insert**:
 		
-		$sudo docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i [PREFIX] -p [PDB FILE] [OTHER OPTIONS (see CMD Config below)]
+		$sudo docker run -v [Complete/path/to/your/local/folder/]patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i [PREFIX] -p [PDB FILE] [OTHER OPTIONS]
 		
 2. To **customize your pipeline-deployment**, you can append the following to the run-command:
 > 
-
-	-d, --d   : delta radius
-	-c, --c   : name of the chain, default is chain A
-	-p, --p   : name of the pdb file, mandatory
-	-i, --i   : name of the input folder, mandatory
-	-s, --s   : start Subsampling, default is false
-	-h, --h   : show help (shows this list)
+	-i, --i   : provide name of InOutFolder (mandatory)
+	-p, --p   : provide name of pdb File (mandatory)
+	-d, --d   : provide delta (optional)
+	-c, --c   : provide chain (optional)
+	-s, --s   : starts subsampling
+	-h, --h   : help
 
 3. **Example**
 
-Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA_cds.fa "HA_cds.fa") is located in */home/johndoe/patchdetection/HA_test*, the radius is 7 angstrom and the pdb file is named 3hmg.pdb. You would then run
+Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/SDplots/blob/master/Software/Testdata/HA "Testdata") is located in */home/johndoe/patchdetection/*, the radius is 7 angstrom (default), the pdb file is named protein.pdb and subsampling is on. You would then run
 
- 	$sudo docker run -v /home/johndoe/patchdetection:/app/patchdetection tklingenbifolab/pdpipeline:beta -i HA_test -p 3hmg.pdb
+		$sudo docker run -v /home/johndoe/patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i HA -p protein.pdb -s
 
 4. **Stopping the Pipeline**
 
 If you want to terminate the pipeline, you have two options:
 1. Close the terminal in which the pipeline is running (ignore the warning that might pop up).
 2. More elegant: Open a second terminal, run `$sudo docker ps` and copy the container ID of the execution that you want to stop. Then run `$sudo docker stop [CONTAINER ID]`. It may take a few seconds befor the container terminates.
+
+
+
+
+
+
+
 
 - - -
 ## PatchDetection for Windows
