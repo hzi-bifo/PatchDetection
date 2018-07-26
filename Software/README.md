@@ -41,7 +41,8 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 		
 2. To **customize your pipeline-deployment**, you can append the following to the run-command:
 
->	-i, --i   	: provide name of InOutFolder (mandatory)
+>	
+	-i, --i   	: provide name of InOutFolder (mandatory)
 	-p, --p   	: provide name of pdb File (mandatory)
 	-d, --d		: provide delta (optional)
 	-c, --c   		: provide chain (optional)
@@ -84,7 +85,8 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 		
 3. To **customize your pipeline-deployment**, you can append the following to the run-command:
 
->	-i, --i   	: provide name of InOutFolder (mandatory)
+>	
+	-i, --i   	: provide name of InOutFolder (mandatory)
 	-p, --p   	: provide name of pdb File (mandatory)
 	-d, --d		: provide delta (optional)
 	-c, --c   		: provide chain (optional)
@@ -126,7 +128,8 @@ The software image runs on Docker. Docker is an open platform for developers and
 		
 3. To **customize your pipeline-deployment**, you can append the following to the run-command:
 
->	-i, --i   	: provide name of InOutFolder (mandatory)
+>	
+	-i, --i   	: provide name of InOutFolder (mandatory)
 	-p, --p   	: provide name of pdb File (mandatory)
 	-d, --d		: provide delta (optional)
 	-c, --c   		: provide chain (optional)
