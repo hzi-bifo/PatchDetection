@@ -45,9 +45,9 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 	-i, --i   	: provide name of InOutFolder (mandatory)
 	-p, --p   	: provide name of pdb File (mandatory)
 	-d, --d		: provide delta (optional)
-	-c, --c   		: provide chain (optional)
-	-s, --s 		 : starts subsampling (optional)
-	-h, --h 		: help
+	-c, --c   	: provide chain (optional)
+	-s, --s 	: starts subsampling (optional)
+	-h, --h 	: help
 
 3. **Example**
 
@@ -89,15 +89,15 @@ The software runs on Docker. Docker is an open platform for developers and sysad
 	-i, --i   	: provide name of InOutFolder (mandatory)
 	-p, --p   	: provide name of pdb File (mandatory)
 	-d, --d		: provide delta (optional)
-	-c, --c   		: provide chain (optional)
-	-s, --s 		 : starts subsampling (optional)
-	-h, --h 		: help
+	-c, --c   	: provide chain (optional)
+	-s, --s 	: starts subsampling (optional)
+	-h, --h 	: help
 
 4. **Example**
 
 Say the input folder [(example can be downloaded here)](https://github.com/hzi-bifo/PatchDetection/tree/master/Software/Testdata/  "HA") is located in */home/johndoe/patchdetection/*, the pdb file is named protein.pdb and subsampling is on. You would then run:
 
-> $docker run -v C:\users\johndoe\Documents\patchdetection:\app\patchdetection tklingenbifolab\patchdetection:beta -i HA -p protein.pdb
+> $docker run -v C:\patchdetection:/app/patchdetection tklingenbifolab/patchdetection:beta -i HA -p protein.pdb
 
 5. **Stopping the Pipeline**
 
@@ -132,9 +132,9 @@ The software image runs on Docker. Docker is an open platform for developers and
 	-i, --i   	: provide name of InOutFolder (mandatory)
 	-p, --p   	: provide name of pdb File (mandatory)
 	-d, --d		: provide delta (optional)
-	-c, --c   		: provide chain (optional)
-	-s, --s 		 : starts subsampling (optional)
-	-h, --h 		: help
+	-c, --c   	: provide chain (optional)
+	-s, --s 	: starts subsampling (optional)
+	-h, --h 	: help
 
 3. **Example**
 
