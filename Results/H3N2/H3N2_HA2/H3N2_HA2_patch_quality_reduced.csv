@@ -1,0 +1,3 @@
+Patch_no	Precision	  Recall	Fragments/Patch	   omega
+       1	 1.00000	 0.35040	 0.35040	 0.70689
+     All	 0.74332	 0.46605	 1.00000	 0.70689
